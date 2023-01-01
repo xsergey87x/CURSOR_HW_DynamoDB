@@ -1,5 +1,6 @@
 package com.cursor.dynamoDb.dynamoDb.model;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
@@ -9,32 +10,36 @@ public class User {
     private String userID;
     private String firstName;
     private String lastName;
-    private int age;
     private String email;
 
     @DynamoDBHashKey(attributeName = "UserID")
-    public String getCustomerID() {
+    public String getUserID() {
         return userID;
     }
-
-    public void setCustomerID(String customerID) {
-        this.customerID = customerID;
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
-    @DynamoDBAttribute(attributeName = "Name")
-    public String getName() {
-        return name;
+    @DynamoDBAttribute(attributeName = "FirstName")
+    public String getFirstName() {
+        return firstName;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @DynamoDBAttribute(attributeName = "LastName")
+    public String getLastName() {
+        return lastName;
+    }
+    public void setLastName(String firstName) {
+        this.lastName = firstName;
     }
 
     @DynamoDBAttribute(attributeName = "Email")
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
