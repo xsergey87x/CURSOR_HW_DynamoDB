@@ -13,9 +13,8 @@ public class SnsService {
 
     private final AmazonSNSClient amazonSNSClient;
 
-    public void subscribeToSNSTopic(String news) {
-        SubscribeRequest subscribeRequest = new SubscribeRequest(TOPIC_ARN, "news", news);
+    public void subscribeToSNSTopic(String userEmail) {
+        SubscribeRequest subscribeRequest = new SubscribeRequest(TOPIC_ARN, "email", userEmail);
         amazonSNSClient.subscribe(subscribeRequest);
     }
-
 }

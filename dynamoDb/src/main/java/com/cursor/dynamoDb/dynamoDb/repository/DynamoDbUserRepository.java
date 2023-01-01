@@ -11,17 +11,15 @@ public class DynamoDbUserRepository {
 
     private final DynamoDBMapper dynamoDBMapper;
 
-    public void createUser(User user)
-    {
+    public void createUser(User user) {
         dynamoDBMapper.save(user);
     }
 
-    public void deleteUser(User user)
-    {
+    public void deleteUser(User user) {
         dynamoDBMapper.delete(user);
     }
 
-    public User getUserByHashKey(String userId){
-        return dynamoDBMapper.load(User.class,userId);
+    public User getUserByHashKey(String userId) {
+        return dynamoDBMapper.load(User.class, userId);
     }
 }

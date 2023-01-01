@@ -33,16 +33,15 @@ public class S3Service {
     private final AmazonS3 s3;
 
     public void createS3Bucket(String bucketName) {
-            s3.createBucket(bucketName);
+        s3.createBucket(bucketName);
     }
 
-    public void saveDocumentInS3Bucket(String document, String bucketName) throws Exception
-    {
+    public void saveDocumentInS3Bucket(String document, String bucketName) throws Exception {
         File file = new File("temporaryFile.pdf");
         Path path = Paths.get(temporaryFilePath);
-        Files.writeString(path,document,StandardCharsets.UTF_8);
+        Files.writeString(path, document, StandardCharsets.UTF_8);
 
-        s3.putObject(bucketName,temporaryFilePath,file);
+        s3.putObject(bucketName, temporaryFilePath, file);
 
         file.delete();
     }

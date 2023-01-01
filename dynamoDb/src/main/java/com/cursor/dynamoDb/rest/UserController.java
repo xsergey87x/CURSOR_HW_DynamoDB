@@ -7,7 +7,6 @@ import com.cursor.dynamoDb.services.SnsService;
 import com.cursor.dynamoDb.utils.Helper;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
@@ -34,12 +33,11 @@ public class UserController {
 
     @GetMapping(value = "/copyDocumentFromDynamoToS3/{userId}")
     public void copyFromDynamoDbToS3(@PathVariable String userId) throws Exception {
-         helper.copyUserDocumentFromDynamoDbToS3(userId);
+        helper.copyUserDocumentFromDynamoDbToS3(userId);
     }
 
     @GetMapping(value = "/subscribeUser/{userId}")
-    public void subscribeUser(@PathVariable String userId)
-    {
-
+    public void subscribeUser(@PathVariable String userId) {
+        snsService.subscribeToSNSTopic(dynamoDbService.getUserEmailByUserId(userId));
     }
 }

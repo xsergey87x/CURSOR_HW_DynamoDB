@@ -17,6 +17,7 @@ public class User {
     public String getUserID() {
         return userID;
     }
+
     public void setUserID(String userID) {
         this.userID = userID;
     }
@@ -25,6 +26,7 @@ public class User {
     public String getFirstName() {
         return firstName;
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -33,6 +35,7 @@ public class User {
     public String getLastName() {
         return lastName;
     }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -41,14 +44,16 @@ public class User {
     public String getDocument() {
         return document;
     }
+
     public void setDocument(String document) {
-        this.lastName = document;
+        this.document = document;
     }
 
     @DynamoDBAttribute(attributeName = "Email")
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
