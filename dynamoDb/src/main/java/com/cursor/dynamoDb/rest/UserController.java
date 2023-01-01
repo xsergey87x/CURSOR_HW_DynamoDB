@@ -32,8 +32,14 @@ public class UserController {
         dynamoDbService.removeUserDynamoDb(user);
     }
 
-    public void copyFromDynamoDbToS3() {
-
+    @GetMapping(value = "/copyDocumentFromDynamoToS3/{userId}")
+    public void copyFromDynamoDbToS3(@PathVariable String userId) throws Exception {
+         helper.copyUserDocumentFromDynamoDbToS3(userId);
     }
 
+    @GetMapping(value = "/subscribeUser/{userId}")
+    public void subscribeUser(@PathVariable String userId)
+    {
+
+    }
 }

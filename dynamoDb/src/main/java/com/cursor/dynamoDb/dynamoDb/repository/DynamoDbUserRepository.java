@@ -20,4 +20,8 @@ public class DynamoDbUserRepository {
     {
         dynamoDBMapper.delete(user);
     }
+
+    public User getUserByHashKey(String userId){
+        return dynamoDBMapper.load(User.class,userId);
+    }
 }
