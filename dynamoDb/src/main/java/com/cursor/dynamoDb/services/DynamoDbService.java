@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class dynamoDbService {
+public class DynamoDbService {
 
     DynamoDbUserRepository dynamoDbUserRepository;
 

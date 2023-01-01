@@ -9,7 +9,7 @@ import java.io.File;
 
 @Component
 @RequiredArgsConstructor
-public class s3Service {
+public class S3Service {
 
     private final AmazonS3 s3;
 

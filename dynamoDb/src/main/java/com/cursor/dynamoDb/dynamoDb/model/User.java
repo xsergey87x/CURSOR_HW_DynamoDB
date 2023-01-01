@@ -11,6 +11,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+    private String document;
 
     @DynamoDBHashKey(attributeName = "UserID")
     public String getUserID() {
@@ -32,8 +33,16 @@ public class User {
     public String getLastName() {
         return lastName;
     }
-    public void setLastName(String firstName) {
-        this.lastName = firstName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    @DynamoDBAttribute(attributeName = "document")
+    public String getDocument() {
+        return document;
+    }
+    public void setDocument(String document) {
+        this.lastName = document;
     }
 
     @DynamoDBAttribute(attributeName = "Email")
